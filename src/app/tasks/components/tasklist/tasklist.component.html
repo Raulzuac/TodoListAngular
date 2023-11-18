@@ -1,1 +1,15 @@
-<p>tasklist works!</p>
+<mat-selection-list role="list">
+
+  @for(task of tasks;track task.taskName){
+    <div>
+      <mat-list-option (click)="switchTaskState(task.id)" role="listitem" class="flex justify-between"
+    ngClass="">
+      <span class="me-3">{{task.taskName}}</span>
+      </mat-list-option>
+      <button mat-button color="primary" (click)="openDialog()">Edit</button>
+      <button mat-button color="warn" (click)="openDialog()">Delete</button>
+    <mat-divider></mat-divider>
+    </div>
+  }
+
+<mat-selection-list/>
