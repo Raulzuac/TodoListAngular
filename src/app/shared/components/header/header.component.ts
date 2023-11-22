@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatIconModule} from '@angular/material/icon'
+import { TaskListServiceService } from '../../../tasks/services/task-list-service.service';
+import { appname } from '../../assets/assets';
 
 
 
@@ -10,5 +10,9 @@ import { MatIconModule} from '@angular/material/icon'
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+
+  constructor(public taskService:TaskListServiceService){}
+
+  tittle:string = appname;
 
 }

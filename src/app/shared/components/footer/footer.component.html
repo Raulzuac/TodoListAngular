@@ -1,11 +1,24 @@
 <mat-toolbar class="sticky top-[100vh] flex justify-evenly">
-  <a href="">
-    <p matTooltip="Link to linkedin">Linkedin</p>
+
+
+  @for(social of socials;track socials){
+
+  <a href="{{social.link}}">
+    <p matTooltip="Link to {{social.name}}">{{social.name}}</p>
   </a>
-  <a href="">
-    <p matTooltip="Link to Twitter">Twitter</p>
+  }
+
+
+  <!-- Old -->
+  <!--
+  <a href="{{socials[0].link}}">
+    <p matTooltip="Link to {{socials[0].name}}">{{socials[0].name}}</p>
   </a>
-  <a href="">
-    <p matTooltip="Link to Github">Github</p>
+  <a href="{{socials[1].link}}">
+    <p matTooltip="Link to {{socials[1].name}}">{{socials[1].name}}</p>
   </a>
+  <a href="{{socials[2].link}}">
+    <p matTooltip="Link to {{socials[2].name}}">{{socials[2].name}}</p>
+  </a> -->
+
 </mat-toolbar>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { links } from '../../assets/assets';
 
 
 @Component({
@@ -9,5 +8,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+
+
+  public socials = links;
 
 }

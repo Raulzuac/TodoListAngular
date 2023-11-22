@@ -17,6 +17,7 @@ import { ModifyTaskDialogComponent } from './components/modify-task-dialog/modif
 import {MatIconModule} from '@angular/material/icon';
 import {FormsModule} from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { EraseTaskDialogComponent } from './components/erase-task-dialog/erase-task-dialog.component';
 
 
 
@@ -24,6 +25,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   declarations: [
 
     ModifyTaskDialogComponent,
+    EraseTaskDialogComponent
   ],
   imports: [
     CommonModule,

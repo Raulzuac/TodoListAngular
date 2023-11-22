@@ -1,15 +1,17 @@
-<mat-selection-list role="list">
+<section class="flex flex-wrap p-5 justify-evenly h-[61.2vh]">
+    @if((tasks.length===0 && completedTasks.length===0)){
+      <h1 class="text-white">There are no tasks</h1>
+    }
+    @else{
+    @for(task of tasks;track task.taskName){
+      <app-single-task [task]="task"></app-single-task>
+    }
+    @for(task of completedTasks;track task.taskName){
+      <app-single-task [task]="task"></app-single-task>
+    }
 
-  @for(task of tasks;track task.taskName){
-    <div>
-      <mat-list-option (click)="switchTaskState(task.id)" role="listitem" class="flex justify-between"
-    ngClass="">
-      <span class="me-3">{{task.taskName}}</span>
-      </mat-list-option>
-      <button mat-button color="primary" (click)="openDialog()">Edit</button>
-      <button mat-button color="warn" (click)="openDialog()">Delete</button>
-    <mat-divider></mat-divider>
-    </div>
-  }
+    }
 
-<mat-selection-list/>
+
+
+</section>

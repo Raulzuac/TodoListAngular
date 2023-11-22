@@ -7,47 +7,64 @@ import { v4 as uuid } from 'uuid';
 })
 export class TaskListServiceService {
 
+
+
   _tasks:Task[] = [];
-  _completedTasks:Task[] = [];
 
   constructor() { }
 
   get getTasks(){
-    return [...this._tasks];
+    return [...this._tasks.filter((task)=>task.completed==false)];
   }
 
   get getCompletedTasks(){
-    return [...this._completedTasks];
+    return [...this._tasks.filter((task)=>task.completed==true)];
   }
 
-  addTask(task:string){
+  getTask(id:string){
+    return this._tasks.find((task)=>task.id===id)
+  }
+
+  addTask(task:string,desc:string){
     this._tasks.push({
       id:uuid(),
       taskName:task,
-      completed:false
+      description:desc,
+      completed:false,
     })
   }
 
   swapTakState(id:string):void{
-    let task:Task = this._tasks.filter((task) => task.id===id)[0];
-    if(!task) task = this._completedTasks.filter((task)=>task.id=id)[0];
-    if(!task)return;
-    console.log(task.completed);
+    this._tasks.map((task)=>{if(task.id==id)task.completed=!task.completed})
+  }
 
-    if(task.completed===true){
-      console.log('Estaba completa');
 
-      task.completed=false;
-      this._completedTasks = this._completedTasks.filter((task)=>task.id===id);
-      this._tasks.push(task);
+  deleteTask(id: string) {
+    this._tasks= this._tasks.filter((task)=>task.id!=id);
+  }
 
-    }else{
-      console.log('No estaba completa');
+  modifyTask(id: string, taskname: string,description:string) {
 
-      task.completed=true;
-      this._tasks = this._tasks.filter((task)=>task.id===id);
-      this._completedTasks.push(task);
 
+    console.log({id,taskname});
+
+   this._tasks.map((task)=>{
+    if(task.id===id){
+      task.taskName=taskname;
+      task.description=description;
     }
+  });
+  }
+
+  deleteTasks(){
+    this._tasks=[];
+  }
+
+  cleanupTasks(){
+    this._tasks = this._tasks.filter((task)=>!task.completed)
+  }
+
+  countTasks():number{
+    return this._tasks.length
   }
 }

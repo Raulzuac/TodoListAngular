@@ -1,0 +1,10 @@
+<div [ngClass]="{'bg-stone-500':task!.completed}" class="animate__animated animate__bounceInLeft w-[75vw] sm:w-[25vw] bg-orange-300 p-2 rounded-md shadow-2xl m-2">
+  <mat-list (click)="switchTaskState(task!.id)" role="listitem" class="flex justify-between text-white"
+ngClass="">
+  <span class="me-3 text-4xl w-[100%]">{{task!.taskName}}</span>
+  <br>
+  <span class="me-3 verdana">{{task!.description}}</span>
+  </mat-list>
+  <button mat-button color="primary" (click)="openEditDialog(task!.id)">Edit</button>
+  <button mat-button color="warn" (click)="openDeleteDialog(task!.id)">Delete</button>
+</div>

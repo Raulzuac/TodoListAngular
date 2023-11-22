@@ -1,9 +1,9 @@
-<mat-grid-list cols="1" rowHeight="10.7vh">
-  <mat-grid-tile rowspan="1">
+<mat-grid-list cols="1" rowHeight="10.2vh">
+  <mat-grid-tile rowspan="2">
     <task-input></task-input>
   </mat-grid-tile>
-  <mat-grid-tile rowspan="7">
-    <task-list></task-list>
+  <mat-grid-tile rowspan="6">
+    <task-list [tasks]="taskService.getTasks" [completedTasks]="taskService.getCompletedTasks" class="overflow-auto"></task-list>
   </mat-grid-tile>
 </mat-grid-list>
 

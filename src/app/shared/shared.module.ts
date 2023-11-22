@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { MatIconModule} from '@angular/material/icon'
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 
 
 @NgModule({

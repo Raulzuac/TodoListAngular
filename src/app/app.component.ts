@@ -7,7 +7,7 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatGridListModule} from '@angular/material/grid-list';
 import { TasksModule } from './tasks/tasks.module';
 import { MainComponent } from './tasks/components/pages/main/main.component';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @Component({
@@ -19,7 +19,7 @@ import { MainComponent } from './tasks/components/pages/main/main.component';
     MatIconModule,
     MatGridListModule,
     TasksModule,
-    MainComponent
+    MainComponent,
     // BrowserAnimationsModule
     ],
   templateUrl: './app.component.html',

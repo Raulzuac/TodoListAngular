@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Delete task</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Task</mat-label>
+    <input matInput value="{{taskService.getTask(data.id)?.taskName}}" id="modifyInput" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput value="{{taskService.getTask(data.id)?.description}}" id="modifyInput" disabled>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button color="warn" mat-button mat-dialog-close>Cancel</button>
+  <button color="primary" mat-button mat-dialog-close (click)="deleteTask(data.id)" cdkFocusInitial>Delete</button>
+</div>
